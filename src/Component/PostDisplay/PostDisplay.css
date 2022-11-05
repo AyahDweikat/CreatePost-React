@@ -1,0 +1,51 @@
+.postItem{
+    /* height: 200px; */
+    margin-top: 20px;
+    padding: 20px 40% 20px 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.Posts button.btn1{
+    border: 1px solid blue;
+    color:blue;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.Posts button.btn1:hover{
+    border: 1px solid blue;
+    color:#fff;
+    background-color: blue;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/*  */
+.Posts button.btn2{
+    border: 1px solid blueviolet;
+    color:blueviolet;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.Posts button.btn2:hover{
+    border: 1px solid blueviolet;
+    color:#fff;
+    background-color: blueviolet;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}

@@ -1,0 +1,29 @@
+.comments{
+    margin-top: 20px;
+    border: 2px solid blueviolet;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.commentItem{
+    height: 100px;
+    margin-top: 20px;
+    padding: 20px 40% 20px 20px;
+    border-bottom: 1px dashed rgb(136, 134, 134);
+}
+.dateForm{
+    font-weight: 600;
+}
+.dateForm .date{
+    color:blue;
+    font-weight: 400;
+}
+.commentInput{
+    border:1px solid blueviolet;
+}
+.commentInput:focus{
+    border:1px solid rgb(138, 43, 226);
+    box-shadow: 0 0 0 0.25rem rgba(138, 43, 226 ,0.25);
+}
