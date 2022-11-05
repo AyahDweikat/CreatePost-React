@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class CommentDisplay extends Component {
     render() {
         let {comment, date}=this.props.commentItem;
-        console.log(comment);
         return (
             <div>
                 <div className='commentItem'>

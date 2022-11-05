@@ -24,23 +24,20 @@ export default class Post extends Component {
   }
   addContentPost=(e)=>{
     let postContent = e.target.value;
-    let _content = postContent;
     this.setState({
-      content:_content
+      content:postContent
     })
   }
   addToPosts(e){
     e.preventDefault();
-    let newPost= this.state.content;
     let _postList = this.state.posts;
-    _postList.splice(this.state.posts.length,0,newPost);
-    // console.log(_postList);
+    let x = (this.state.content !=="")? _postList.splice(this.state.posts.length,0,this.state.content): null;
     this.setState({
-      posts :_postList
+      posts :_postList,
+      content:''
     })
   }
   render() {
-    
     return (
       <div>
         <form 
@@ -51,8 +48,7 @@ export default class Post extends Component {
             rows="5" cols="50"
             placeholder="Write what you think"
             id="post"
-            defaultValue={''}
-            // value={this.state.posts.content}
+            value={this.state.content}
             onChange = {this.addContentPost.bind(this)}
           />
           <button className="btn btn-success mt-3" type='submit'>Add post</button>
@@ -61,8 +57,7 @@ export default class Post extends Component {
         {this.state.posts.map((item, idx)=>{
         return <PostDisplay post={item}key={idx}/>
         })}
-        <hr />
-        <Comment />
+        
       </div>
     );
   }

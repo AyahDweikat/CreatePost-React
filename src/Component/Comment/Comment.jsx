@@ -7,10 +7,11 @@ import CommentDisplay from '../CommentDisplay/CommentDisplay';
 class Comment extends Component {
     
     state={
-        commentList:[{comment:`this is an example of comment 1 added by 
-        someone`,date: new Date().toLocaleString()}, 
-        {comment:`this is an example of comment 1 added by 
-        someone`, date: new Date().toLocaleString()}],
+        // commentList:[{comment:`this is an example of comment 1 added by 
+        // someone`,date: new Date().toLocaleString()}, 
+        // {comment:`this is an example of comment 1 added by 
+        // someone`, date: new Date().toLocaleString()}],
+        commentList:[],
         obj:{
             comment:'',
             date:''
@@ -18,7 +19,6 @@ class Comment extends Component {
     }
     addComment=(e)=>{
         let commentContent = e.target.value;
-        // let _content = commentContent;
         let obj={comment:'', date:''}
         obj.comment = commentContent;
         obj.date = new Date().toLocaleString();
@@ -27,14 +27,28 @@ class Comment extends Component {
         })
       }
       addToComment(e){
-        e.preventDefault();
+        // e.preventDefault();
         let newComment= this.state.obj;
         let _commentObj = this.state.commentList;
-        _commentObj.splice(this.state.commentList.length,0,newComment);
-        console.log(_commentObj);
+        let x = (newComment.comment !=="")? _commentObj.splice(this.state.commentList.length,0,newComment): null;
         this.setState({
-            commentList :_commentObj
+            commentList :_commentObj,
+            obj:{comment:''}
         })
+      }
+      componentDidMount=() => {
+        const keyDownHandler = event => {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            // 👇️ call submit function here
+            this.addToComment();
+          }
+        };
+        document.addEventListener('keydown', keyDownHandler);
+
+        return () => {
+          document.removeEventListener('keydown', keyDownHandler);
+        };
       }
     render() {
         return (
@@ -44,8 +58,7 @@ class Comment extends Component {
                 type="text"
                 className="form-control commentInput"
                 placeholder="Write comment"
-                defaultValue={''}
-                // value={this.state.posts.content}
+                value={this.state.obj.comment}
                 onChange = {this.addComment.bind(this)}
               />
             </form>
