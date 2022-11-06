@@ -18,7 +18,7 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-.Posts button.btn1:hover{
+.Posts button.btnClicked{
     border: 1px solid blue;
     color:#fff;
     background-color: blue;
